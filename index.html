@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghost Dating Service</title>
+    <style>
+        body {
+            font-family: 'Creepster', cursive;
+            background: linear-gradient(to bottom, #2c3e50, #34495e, #2c3e50);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            color: #ecf0f1;
+            position: relative;
+        }
+        
+        .spooky-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text font-size="10" fill="rgba(255,255,255,0.03)"></text></svg>') repeat;
+            background-size: 50px 50px;
+            z-index: 0;
+        }
+        
+        .dating-service {
+            max-width: 650px;
+            margin: 0 auto;
+            background: rgba(52, 73, 94, 0.95);
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 0 30px rgba(155, 89, 182, 0.3);
+            border: 3px solid #9b59b6;
+            position: relative;
+            z-index: 1;
+        }
+        
+        h1 {
+            color: #e8daef;
+            text-align: center;
+            font-size: 2.4em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 15px rgba(155, 89, 182, 0.8);
+        }
+        
+        .membership-tier {
+            background: linear-gradient(135deg, rgba(155, 89, 182, 0.3), rgba(142, 68, 173, 0.3));
+            margin: 20px 0;
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid #9b59b6;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .membership-tier:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(155, 89, 182, 0.4);
+        }
+        
+        .tier-name {
+            color: #e8daef;
+            font-weight: bold;
+            font-size: 1.3em;
+            margin-bottom: 12px;
+        }
+        
+        .tier-features {
+            color: #bdc3c7;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+        
+        .price {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: #8e44ad;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        
+        .ghost-img {
+            width: 40px;
+            height: 40px;
+            float: left;
+            margin-right: 15px;
+            margin-top: 5px;
+            opacity: 0.8;
+            animation: float 3s ease-in-out infinite;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #fff;
+        }
+        
+        .ghost-img.premium {
+            animation-delay: 1s;
+        }
+        
+        .ghost-img.supreme {
+            animation-delay: 2s;
+        }
+        
+        @keyframes float {
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .testimonial {
+            background: rgba(231, 76, 60, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 25px;
+            border-left: 4px solid #e74c3c;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="spooky-bg"></div>
+
+    <div class="dating-service">
+        <h1>Phantom Hearts Dating</h1>
+        <p style="text-align: center; color: #bdc3c7; font-size: 1.1em;">
+            "Finding love in the afterlife since 1692"
+        </p>
+        <img style="margin-left: 150px;" src="data:image/webp;base64,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">
+
+        <div class="membership-tier">
+            <div class="price">Free</div>
+            <img class="ghost-img" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=facearea&w=80&h=80&facepad=2&q=80" alt="Basic Tier">
+            <div class="tier-name">Poltergeist Basic</div>
+            <div class="tier-features">
+                Browse profiles of recently deceased • Send ethereal winks • Basic chain rattling notifications
+            </div>
+        </div>
+
+        <div class="membership-tier">
+            <div class="price">$13/month</div>
+            <img class="ghost-img premium" src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=facearea&w=80&h=80&facepad=2&q=80" alt="Premium Tier">
+            <div class="tier-name">Phantom Premium</div>
+            <div class="tier-features">
+                Unlimited messages through Ouija board • Advanced haunting techniques • Match with spirits from any century
+            </div>
+        </div>
+
+        <div class="membership-tier">
+            <div class="price">$31/month</div>
+            <img class="ghost-img supreme" src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=facearea&w=80&h=80&facepad=2&q=80" alt="Supreme Tier">
+            <div class="tier-name">Spectral Supreme</div>
+            <div class="tier-features">
+                VIP access to celebrity ghosts • Professional séance coordinator • Exclusive haunted mansion dates
+            </div>
+        </div>
+
+        <div class="testimonial">
+            <strong>Success Story:</strong> "I met my soulmate through Phantom Hearts! We've been happily haunting the same Victorian mansion for 6 months now!"
+            <br><em>- Eleanor, Ghost of 1847</em>
+        </div>
+
+        <p style="text-align: center; margin-top: 20px; color: #95a5a6; font-size: 0.9em;">
+            Must be deceased for at least 30 days to join. Vampire applications considered on case-by-case basis.
+        </p>
+    </div>
+</body>
+
+</html>
